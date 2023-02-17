@@ -40,6 +40,6 @@
     "mfm-js": "^0.23.3"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
+    "registry": "https://npm.pkg.github.com/opera7133"
   }
 }
