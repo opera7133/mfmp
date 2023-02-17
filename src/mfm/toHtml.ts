@@ -120,7 +120,7 @@ export function toHtml(tokens: mfm.MfmNode[], config: mfmHTMLConf = {}): string 
     hashtag(token) {
       const a = doc.createElement('a');
       if (token.type === "hashtag") {
-        a.href = `${config.url || ''}/tags/${token.props.hashtag}`;
+        a.href = `https://${config.url || ''}/tags/${token.props.hashtag}`;
         a.textContent = `#${token.props.hashtag}`;
       }
       a.setAttribute('rel', 'tag');
