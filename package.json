@@ -1,0 +1,40 @@
+{
+  "name": "mfmp",
+  "version": "1.0.0",
+  "description": "Misskey Flavored Markdown Parser",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/opera7133/mfmp.git"
+  },
+  "keywords": [
+    "misskey",
+    "markdown",
+    "parser",
+    "mfm"
+  ],
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/opera7133/mfmp/issues"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "homepage": "https://github.com/opera7133/mfmp#readme",
+  "devDependencies": {
+    "@types/mocha": "^10.0.1",
+    "@types/node": "^18.13.0",
+    "mocha": "^10.2.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "@types/jsdom": "^21.1.0",
+    "jsdom": "^21.1.0",
+    "mfm-js": "^0.23.3"
+  }
+}
