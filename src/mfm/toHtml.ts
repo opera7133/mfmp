@@ -70,40 +70,15 @@ export function toHtml(tokens: mfm.MfmNode[], config: mfmHTMLConf = {}): string 
       return el;
     },
 
-    motion(token) {
-      motcnt++
-      const el = doc.createElement('i');
-      if (token.children) {
-        appendChildren(token.children, el);
-      }
-      el.setAttribute('data-mfm', 'motion');
-      if (config.animate && motcnt <= 3) el.setAttribute('class', 'animated rubberBand')
-      return el;
-    },
-
-    spin(token) {
-      const el = doc.createElement('i');
-      el.setAttribute('data-mfm', 'spin');
-      if (token.children) {
-        appendChildren(token.children, el);
-      }
-      return el;
-    },
-
-    jump(token) {
-      const el = doc.createElement('i');
-      el.setAttribute('data-mfm', 'jump');
-      if (token.children) {
-        appendChildren(token.children, el);
-      }
-      return el;
-    },
-
-    flip(token) {
+    fn(token) {
       const el = doc.createElement('span');
-      el.setAttribute('data-mfm', 'flip');
-      if (token.children) {
+      if (token.type === "fn") {
         appendChildren(token.children, el);
+        const args = Object.keys(token.props.args)
+        args.map((arg) => {
+          el.classList.add(arg)
+        })
+        el.setAttribute('data-mfm', token.props.name);
       }
       return el;
     },
@@ -130,11 +105,15 @@ export function toHtml(tokens: mfm.MfmNode[], config: mfmHTMLConf = {}): string 
       return el;
     },
 
-    emoji(token) {
+    unicodeEmoji(token) {
+      if (token.type === "unicodeEmoji") {
+        return doc.createTextNode(token.props.emoji);
+      }
+    },
+
+    emojiCode(token) {
       if (token.type === "emojiCode") {
         return doc.createTextNode(`:${token.props.name}:`);
-      } else if (token.type === "unicodeEmoji") {
-        return doc.createTextNode(token.props.emoji);
       }
     },
 
