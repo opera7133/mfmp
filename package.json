@@ -1,5 +1,5 @@
 {
-  "name": "mfmp",
+  "name": "@opera7133/mfmp",
   "version": "1.0.0",
   "description": "Misskey Flavored Markdown Parser",
   "main": "./dist/index.js",
@@ -22,10 +22,6 @@
   "bugs": {
     "url": "https://github.com/opera7133/mfmp/issues"
   },
-  "files": [
-    "dist",
-    "src"
-  ],
   "homepage": "https://github.com/opera7133/mfmp#readme",
   "devDependencies": {
     "@types/mocha": "^10.0.1",
