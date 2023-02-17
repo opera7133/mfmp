@@ -2,13 +2,15 @@
   "name": "mfmp",
   "version": "1.0.0",
   "description": "Misskey Flavored Markdown Parser",
-  "main": "dist/index.js",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
+    "prepublishOnly": "npm run build",
     "build": "tsc"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/opera7133/mfmp.git"
+    "url": "https://github.com/opera7133/mfmp.git"
   },
   "keywords": [
     "misskey",
@@ -36,5 +38,8 @@
     "@types/jsdom": "^21.1.0",
     "jsdom": "^21.1.0",
     "mfm-js": "^0.23.3"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   }
 }
