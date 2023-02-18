@@ -1,7 +1,7 @@
 {
   "name": "@opera7133/mfmp",
   "version": "1.0.2-1",
-  "description": "Misskey Flavored Markdown Parser",
+  "description": "MFM to HTML Converter",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
