@@ -17,6 +17,8 @@ jobs:
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org
+          always-auth: true
+          scope: '@opera7133'
 
       - name: Package install
         run: npm install --frozen-lockfile
