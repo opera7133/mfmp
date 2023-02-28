@@ -112,8 +112,17 @@ export function toHtml(tokens: mfm.MfmNode[], config: mfmHTMLConf = {}): string 
     },
 
     emojiCode(token) {
-      if (token.type === "emojiCode") {
-        return doc.createTextNode(`:${token.props.name}:`);
+      if (config.url) {
+        const el = doc.createElement('img');
+        if (token.type === "emojiCode") {
+          el.setAttribute('src', `https://${config.url}/emoji/${token.props.name}.webp`);
+          el.setAttribute('alt', token.props.name)
+        }
+        return el;
+      } else {
+        if (token.type === "emojiCode") {
+          return doc.createTextNode(`:${token.props.name}:`);
+        }
       }
     },
 
