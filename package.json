@@ -1,7 +1,9 @@
 {
   "name": "@opera7133/mfmp",
-  "version": "1.0.1",
-  "description": "Misskey Flavored Markdown Parser",
+  "version": "1.0.2-3",
+  "author": "wamo <ainznino@pm.me>",
+  "license": "MIT",
+  "description": "MFM to HTML Converter",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
@@ -18,7 +20,6 @@
     "parser",
     "mfm"
   ],
-  "license": "AGPL-3.0",
   "bugs": {
     "url": "https://github.com/opera7133/mfmp/issues"
   },
@@ -34,9 +35,5 @@
     "@types/jsdom": "^21.1.0",
     "jsdom": "^21.1.0",
     "mfm-js": "^0.23.3"
-  },
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://npm.pkg.github.com/opera7133"
   }
 }

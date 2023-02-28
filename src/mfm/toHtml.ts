@@ -129,10 +129,11 @@ export function toHtml(tokens: mfm.MfmNode[], config: mfmHTMLConf = {}): string 
     hashtag(token) {
       const a = doc.createElement('a');
       if (token.type === "hashtag") {
-        a.href = `${config.url || ''}/tags/${token.props.hashtag}`;
+        a.href = `https://${config.url || ''}/tags/${token.props.hashtag}`;
+        a.target = "_blank"
+        a.rel="noopener noreferrer tag"
         a.textContent = `#${token.props.hashtag}`;
       }
-      a.setAttribute('rel', 'tag');
       a.setAttribute('data-mfm', 'hashtag');
       return a;
     },
@@ -191,6 +192,8 @@ export function toHtml(tokens: mfm.MfmNode[], config: mfmHTMLConf = {}): string 
             a.href = host ? `https://${host}/{acct}` : `https://${config.url}/${acct}`;
             break;
         }
+        a.target = "_blank"
+        a.rel="noopener noreferrer"
         a.textContent = acct;
         a.setAttribute('data-mfm', 'mention');
       }
